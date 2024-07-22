@@ -1,0 +1,271 @@
+.banner_container {
+  background: linear-gradient(to top, black, transparent),
+    url("../../assets/banner_background.jpg");
+  width: 100%;
+  height: 85vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  padding: 1.5rem 6.25rem;
+  position: relative;
+  .logo {
+    display: none;
+  }
+  > * {
+    position: relative;
+    z-index: 6;
+  }
+  .title_banner {
+    transform: translateX(-100px);
+    opacity: 0;
+    animation: goIn 1s ease;
+    animation-fill-mode: forwards;
+    margin-top: 14.34rem;
+    h3 {
+      font-family: Heavitas;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+    h1 {
+      font-family: Heavitas;
+      font-size: 4rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 4rem;
+    }
+    > p {
+      width: 15.3rem;
+      height: 4rem;
+      background-image: url("../../assets/banner_button.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      text-align: center;
+      font-family: Poppins;
+      align-content: space-evenly;
+      color: black;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 1.5rem;
+      height: 4.16rem;
+    }
+  }
+
+  .banner_item_container {
+    display: flex;
+    width: fit-content;
+    .banner_item {
+      width: 18rem;
+      height: fit-content;
+      display: flex;
+      transform: translateX(-100px);
+      opacity: 0;
+      animation: goIn 2s ease;
+      animation-fill-mode: forwards;
+      img {
+        object-position: 0px 0px;
+        width: 1rem;
+        height: 1rem;
+        margin-right: 0.38rem;
+      }
+      ul {
+        padding-left: 1.05rem;
+      }
+      .banner_item_header {
+        display: flex;
+      }
+      .banner_item_content {
+        h4 {
+          color: #d9d9d9;
+          font-family: Poppins;
+          font-size: 0.875rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 1.375rem;
+          letter-spacing: 0.00219rem;
+        }
+        p,
+        li {
+          color: white;
+          font-family: Poppins;
+          font-size: 0.875rem;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 1.375rem;
+          letter-spacing: 0.00219rem;
+        }
+        p,
+        ul {
+          border-top: 0.1rem solid transparent;
+          border-image: linear-gradient(
+              to right,
+              rgba(255, 255, 255, 1),
+              rgba(255, 255, 255, 0)
+            )
+            1;
+        }
+      }
+    }
+    > .banner_item {
+      transform: translateX(-100px);
+      opacity: 0;
+      animation: goIn 1s ease;
+      animation-fill-mode: forwards;
+    }
+  }
+  .btn_container {
+    display: flex;
+    position: absolute;
+    right: 5rem;
+    bottom: -4rem;
+    .book_btn {
+      display: flex;
+      width: 11.88669rem;
+      height: 12.12288rem;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      margin-left: 0.99rem;
+      * {
+        z-index: 4;
+        position: relative;
+      }
+      p {
+        color: #fff;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 1.25rem;
+        letter-spacing: 0.00875rem;
+      }
+      h3 {
+        color: #fff;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 3rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 3.25rem;
+      }
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        animation: rotate360 6s linear infinite;
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .banner_container {
+    align-content: end;
+    height: 70vh;
+    .sub_background {
+      position: absolute;
+      width: 67.47981rem;
+      display: none;
+      height: 65.726rem;
+      top: -5px;
+      left: -19px;
+    }
+    > * {
+      position: relative;
+      z-index: 6;
+    }
+    .logo {
+      display: block;
+      position: absolute;
+      top: 6.25rem;
+      left: 6.25rem;
+      width: 18.13333rem;
+      height: 15.8976rem;
+    }
+    .title_banner {
+      h3 {
+        font-weight: 400;
+        font-size: 3.2rem;
+        line-height: normal;
+      }
+      h1 {
+        font-size: 7.46667rem;
+        font-weight: 400;
+        line-height: 7.46667rem;
+        width: 59.51467rem;
+      }
+      > p {
+        width: 44.03867rem;
+        height: 11.8264rem;
+        font-size: 3.46667rem;
+        line-height: 4.8rem;
+      }
+    }
+
+    .banner_item_container {
+      > div:first-child {
+        display: none;
+      }
+      margin-bottom: 30rem;
+      .banner_item ~ .banner_item {
+        display: none;
+      }
+      .banner_item {
+        width: fit-content;
+        margin-right: 9.1rem;
+        img {
+          width: 4.26667rem;
+          height: 4.26667rem;
+          margin-right: 1.6rem;
+        }
+        .banner_item_content {
+          h4 {
+            font-size: 3.46667rem;
+            line-height: 4.8rem;
+          }
+          p,
+          li {
+            font-size: 3.73333rem;
+            font-weight: 600;
+            line-height: 5.86667rem;
+          }
+        }
+      }
+    }
+    .btn_container {
+      display: flex;
+      position: absolute;
+      left: 5rem;
+      bottom: -15rem;
+      .book_btn {
+        width: 30.66667rem;
+        height: 30.93333rem;
+        * {
+          z-index: 4;
+          position: relative;
+        }
+        p {
+          font-size: 2.66667rem;
+          line-height: normal;
+        }
+        h3 {
+          font-size: 9.06667rem;
+          line-height: 10.66667rem;
+          letter-spacing: 0.02267rem;
+        }
+        img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+          animation: rotate360 6s linear infinite;
+        }
+      }
+    }
+  }
+}

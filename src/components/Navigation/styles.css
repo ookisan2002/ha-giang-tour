@@ -1,0 +1,205 @@
+nav {
+  width: 87.5rem;
+  background-color: white;
+  border-radius: 1rem;
+  height: fit-content;
+  color: black;
+  display: flex;
+  padding: 0.913rem 1.88rem;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -17rem;
+  transition: all 0.5s linear;
+  .logo {
+    width: 4.75rem;
+  }
+  .nav_content {
+    display: flex;
+    justify-content: space-between;
+    width: 57.6rem;
+    height: fit-content;
+    .nav_item {
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      > p {
+        color: #2e2e2e;
+        font-family: Heavitas;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.375rem;
+        letter-spacing: 0.00219rem;
+        cursor: pointer;
+        transform: translateY(0.6rem);
+        transition: all 200ms ease;
+        display: flex;
+        align-items: center;
+        svg {
+          width: 1rem;
+          height: 1rem;
+          margin-left: 0.2rem;
+        }
+      }
+      .sub_nav_content {
+        display: none;
+        width: 19rem;
+        border-radius: 3px;
+        height: fit-content;
+        background-color: white;
+        transform: translateY(3rem);
+        padding: 1.6rem 0.9rem;
+        box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.2);
+        border: 0.5px rgba(0, 0, 0, 0.2) solid;
+        position: absolute;
+        color: #2e2e2e;
+        font-family: Heavitas;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.375rem;
+        letter-spacing: 0.00219rem;
+        cursor: pointer;
+        p:hover {
+          color: #ee6529;
+        }
+      }
+    }
+    .nav_item::before {
+      display: block;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 50px;
+    }
+
+    .nav_item::after {
+      display: block;
+      content: "";
+      width: 0.6rem;
+      height: 0.6rem;
+      background-color: #ee6529;
+      opacity: 0;
+      border-radius: 9999px;
+      transform: translateY(9.5px);
+      transition: all 209ms ease;
+    }
+    .nav_item:hover {
+      > p {
+        transform: translateY(0);
+        color: #ee6529;
+        path {
+          fill: #ee6529;
+        }
+      }
+      .sub_nav_content {
+        display: block;
+      }
+    }
+    .nav_item:hover::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .social {
+    display: flex;
+    height: fit-content;
+    img {
+      width: 1.75rem;
+      height: 1.75rem;
+      margin-left: 0.5rem;
+      cursor: pointer;
+    }
+  }
+}
+
+nav.appear{
+    top: 3rem;
+}
+
+.mobile_nav{
+  display: none;
+}
+.mobile_nav_trigger{
+  display: none;
+}
+
+@media (max-width:375px) {
+  nav{
+    display: none;
+  }
+
+  .mobile_nav{
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: 105;
+    background-color: white;
+    right: 0;
+    background-image: url("../../assets/bg-nav-res.png");
+    background-repeat: no-repeat;
+    background-position: end;
+    background-size: cover;
+    transform: translateX(100%);
+    transition: all 1s linear;
+    .mobile_nav_container{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      padding-top: 25rem;
+      align-items: center;
+      position: relative;
+    }
+    .close_nav_trigger{
+      position: absolute;
+      top: 100rem;
+      right: 10rem;
+    }
+    p{
+      font-weight: 400;
+      font-family: Heavitas;
+      font-size: 5.33rem;
+      margin-bottom: 5rem;
+    }
+    .social{
+      display: flex;
+      gap: 2rem;
+    }
+  }
+  .mobile_nav.show{
+    transform: translate(0);
+  }
+  .mobile_nav.hide{
+    transform: translateX(100%);
+  }
+  .mobile_nav_trigger{
+    display: block;
+    width: 6.4rem;
+    height: 6.4rem;
+    position: absolute;
+    top: 9rem;
+    right: 9rem;
+    fill: white;
+    z-index: 10;
+  }
+
+}
+
+@keyframes goOut {
+  to {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+  /* animation: goIn 1s ease;
+  animation-fill-mode: forwards; */
+}

@@ -1,0 +1,30 @@
+.local_nav {
+  display: none;
+}
+
+@media (max-width: 375px) {
+  .local_nav {
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    margin-top: 20rem;
+    background-color: white;
+    padding-top: 5rem;
+    z-index: 100;
+    a {
+      width: 25%;
+      text-align: center;
+      font-weight: 600;
+      font-size: 3.46rem;
+      font-family: Poppins;
+      color: rgb(137 137 137);
+      padding-bottom: 1.6rem;
+      cursor: pointer;
+    }
+    .active {
+      color: rgb(179 75 30);
+      border-bottom: 0.4rem rgb(179 75 30) solid;
+    }
+  }
+}

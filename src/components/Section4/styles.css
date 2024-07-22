@@ -1,0 +1,777 @@
+.section4 {
+  width: 87.5rem;
+  margin: 6.25rem auto;
+  > p {
+    color: #b34b1e;
+    font-family: Heavitas;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    transform: translateY(50px);
+    opacity: 0;
+    animation: goIn 1s ease;
+    animation-fill-mode: forwards;
+  }
+  /* > p.appear{
+      animation: goIn 1s ease;
+      animation-fill-mode: forwards;
+    } */
+  > h3 {
+    color: var(--Primary-70, #b34b1e);
+    font-family: Heavitas;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3rem;
+    margin-bottom: 1.88rem;
+    transform: translateY(100px);
+    opacity: 0;
+    animation: goIn 1s ease;
+    animation-fill-mode: forwards;
+  }
+  /* > h3.appear{
+      animation: goIn 1s ease;
+      animation-fill-mode: forwards;
+    } */
+  .section4_content {
+    display: grid;
+    column-gap: 4.49rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    form {
+      width: 100%;
+      .type_motobike_container {
+        > p {
+          color: #727272;
+          font-family: Poppins;
+          font-size: 0.875rem;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 1.25rem;
+          letter-spacing: 0.00875rem;
+        }
+        .type_motobike {
+          width: 100%;
+          background-color: rgb(242, 242, 242);
+          padding: 0.5rem 1rem;
+          border-radius: 0.5rem;
+          .type_motobike_option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            > p {
+              color: #727272;
+              font-family: Poppins;
+              font-size: 0.875rem;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 1.375rem;
+              letter-spacing: 0.00219rem;
+            }
+            .controller {
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              .minus,
+              .plus {
+                width: 2.25rem;
+                height: 2.25rem;
+                border-radius: 9999px;
+                cursor: pointer;
+                font-size: 1.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: white;
+                box-shadow: 0px 2px 8px 0px rgba(99, 99, 99, 0.2);
+              }
+              p {
+                color: #727272;
+                font-family: Poppins;
+                font-size: 0.875rem;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 1.375rem;
+                letter-spacing: 0.00219rem;
+              }
+            }
+            margin-bottom: 0.75rem;
+          }
+          .totalCost {
+            display: flex;
+            justify-content: space-between;
+            > p {
+              color: #b34b1e;
+              font-family: Poppins;
+              font-size: 1rem;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 1.5rem;
+              letter-spacing: 0.005rem;
+            }
+            .total {
+              background-color: white;
+              width: 12.1875rem;
+              display: flex;
+              border-radius: 0.5rem;
+              height: 2.5rem;
+              padding: 0.75rem 1rem;
+              justify-content: center;
+              align-items: center;
+              p {
+                color: #b34b1e;
+                font-family: Poppins;
+                font-size: 1.25rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 1.5rem;
+                letter-spacing: 0.00188rem;
+              }
+            }
+          }
+        }
+      }
+      .customer_infor_container {
+        > p {
+          color: #727272;
+          font-family: Poppins;
+          font-size: 0.875rem;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 1.25rem;
+          letter-spacing: 0.00875rem;
+        }
+        .customer_infor {
+          .row {
+            margin: 0.75rem 0;
+            .rt-SelectIcon {
+              width: 1rem;
+              height: 1rem;
+              object-fit: cover;
+              display: block;
+            }
+          }
+          input.rt-TextFieldInput,
+          textarea.rt-TextAreaInput,
+          button.form_btn,
+          input.form_date_picker {
+            border-radius: 0.5rem;
+            border: none;
+            box-sizing: border-box;
+            padding: 0.75rem 1rem;
+            height: fit-content;
+            font-size: 0.875rem;
+            color: #1f2d5c;
+            background-color: rgb(242, 242, 242);
+            width: 100%;
+            height: 2.5rem !important;
+          }
+          .form_btn {
+            height: fit-content;
+            box-shadow: none;
+            text-overflow: ellipsis;
+          }
+          .form_date_picker {
+            border-radius: 0.5rem;
+            border: none;
+            box-sizing: border-box;
+            background-color: rgb(242, 242, 242);
+            padding: 0.75rem 1rem;
+            height: fit-content;
+            font-size: 0.875rem;
+            color: #1f2d5c;
+            background-color: rgb(242, 242, 242);
+            width: 100%;
+            height: 100%;
+          }
+          .rt-TextFieldRoot {
+            margin: 0;
+          }
+          .col_2 {
+            display: flex;
+            gap: 0.75rem;
+            > * {
+              flex: 1;
+            }
+          }
+          .col_3 {
+            display: flex;
+            gap: 0.75rem;
+            .btn_container {
+              flex: 2;
+              button {
+                width: 100%;
+              }
+            }
+            .btn_container:last-child {
+              flex: 6;
+              max-width: 22.99rem;
+            }
+          }
+          .btn_container {
+            p {
+              color: #727272;
+              font-family: Poppins;
+              font-size: 0.875rem;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 1.25rem;
+              letter-spacing: 0.00875rem;
+            }
+            .date_picker_container {
+              position: relative;
+              input {
+                position: relative;
+              }
+              input[type="date"]::-webkit-calendar-picker-indicator {
+                background: transparent;
+                bottom: 0;
+                color: transparent;
+                cursor: pointer;
+                height: auto;
+                left: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: auto;
+              }
+              img {
+                position: absolute;
+                right: 0.5rem;
+                top: 50%;
+                width: 1rem;
+                height: 1rem;
+                transform: translateY(-50%);
+              }
+            }
+          }
+        }
+      }
+    }
+    .confirm_container {
+      > h3 {
+        color: #2e2e2e;
+        font-family: Poppins;
+        font-size: 1.25rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 1.5rem;
+        letter-spacing: 0.00188rem;
+      }
+      .table {
+        margin: 0.75rem 0;
+        border-radius: 0.5rem;
+        border: 1px solid rgba(40, 124, 0, 0.14);
+        background-color: rgba(40, 124, 0, 0.14);
+        overflow: hidden;
+        width: 100%;
+        .row {
+          display: flex;
+          border: 0.5px solid #eee;
+          background: #f8fdff;
+          p {
+            display: flex;
+            height: 2.5rem;
+            padding: 0.5rem 1rem;
+            align-items: center;
+            gap: 0.25rem;
+            align-self: stretch;
+            color: #727272;
+            font-family: Poppins;
+            font-size: 0.8125rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.125rem;
+          }
+          p:first-child {
+            width: 12.1875rem;
+            border-right: 0.5px solid #eee;
+            color: #2e2e2e;
+            font-family: Poppins;
+            font-size: 0.8125rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 1.125rem;
+          }
+        }
+      }
+      .sumerize {
+        width: 100%;
+        display: flex;
+        padding: 0.75rem 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        align-self: stretch;
+        border-radius: 0.5rem;
+        background: #0f515d;
+        .provisional,
+        .extraFee,
+        .total {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+        }
+        .provisional,
+        .extraFee {
+          color: #d9d9d9;
+          font-family: Poppins;
+          font-size: 0.875rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 1.25rem;
+          letter-spacing: 0.00875rem;
+          p:last-child {
+            color: var(--Gray-Scale-5, #d9d9d9);
+            text-align: right;
+            font-family: Poppins;
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.5rem;
+            letter-spacing: 0.005rem;
+          }
+        }
+        .extraFee {
+          padding-bottom: 0.5rem;
+          border-bottom: 0.0625rem rgba(217, 217, 217, 0.2) solid;
+        }
+        .total {
+          color: #fff;
+          font-family: Poppins;
+          font-size: 1rem;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 1.5rem;
+          letter-spacing: 0.0125rem;
+          p:last-child {
+            color: #fff;
+            font-family: Poppins;
+            font-size: 1.625rem;
+            font-weight: 700;
+            line-height: 2rem;
+          }
+        }
+      }
+      .btn_group {
+        display: flex;
+        width: 100%;
+        gap: 0.75rem;
+        margin-top: 1rem;
+        justify-content: start;
+        button {
+          border-radius: 0.5rem;
+          display: flex;
+          min-width: 12.1875rem;
+          height: 3.5rem;
+          padding: 1rem 2rem;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+          text-align: center;
+          font-family: Poppins;
+          font-size: 0.8125rem;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 1.25rem;
+        }
+        .pay_btn {
+          background-color: #b34b1e;
+        }
+        .send_request_btn {
+          background-color: #5fb01c;
+        }
+        .pay_btn:hover {
+          background-image: url("../../assets/btnBackground.svg");
+          background-repeat: no-repeat;
+          background-size: 92%;
+          background-position: center;
+        }
+        .send_request_btn:hover {
+          background-image: url("../../assets/btnBackground2.svg");
+          background-repeat: no-repeat;
+          background-size: 92%;
+          background-position: center;
+        }
+        .whatsapp_btn {
+          color: rgb(38, 38, 38);
+          line-height: 1.53;
+          font-weight: 700;
+          font-size: 0.8125rem;
+          transition: all 0.2s linear;
+          background-color: rgb(242, 242, 242);
+          svg {
+            width: 1rem;
+            height: 1rem;
+            margin-right: 1rem;
+          }
+        }
+        .whatsapp_btn:hover {
+          color: white;
+          background-color: #0fa82e;
+          svg {
+            .green_part {
+              fill: white;
+            }
+            .white_part {
+              fill: #0fa82e;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .section4 {
+    width: 87.5rem;
+    margin: 6.25rem auto;
+    > p {
+      font-size: 3.2rem;
+    }
+    /* > p.appear{
+        animation: goIn 1s ease;
+        animation-fill-mode: forwards;
+      } */
+    > h3 {
+      font-size: 6.4rem;
+      line-height: 6.4rem; /* 100% */
+    }
+    /* > h3.appear{
+        animation: goIn 1s ease;
+        animation-fill-mode: forwards;
+      } */
+    .section4_content {
+      display: flex;
+      flex-direction: column;
+      gap: 8rem;
+      form {
+        width: 100%;
+        .type_motobike_container {
+          > p {
+            font-size: 3.46667rem;
+            line-height: 4.8rem;
+          }
+          .type_motobike {
+            padding: 4.27rem;
+            border-radius: 2.133rem;
+            .type_motobike_option {
+              > p {
+                font-size: 3.46667rem;
+                line-height: 4.8rem;
+              }
+              .controller {
+                display: flex;
+                align-items: center;
+                gap: 2.13rem;
+                .minus,
+                .plus {
+                  width: 9.6rem;
+                  height: 9.6rem;
+                  font-size: 6.5rem;
+                }
+                p {
+                  color: #2e2e2e;
+                  font-size: 3.73333rem;
+                  font-weight: 700;
+                  line-height: 5.86667rem; /* 157.143% */
+                  letter-spacing: 0.00933rem;
+                }
+              }
+              margin-bottom: 2.75rem;
+            }
+            .totalCost {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              > p {
+                font-size: 4.26667rem;
+                line-height: 6.4rem; /* 150% */
+                letter-spacing: 0.02133rem;
+              }
+              .total {
+                border-radius: 2.13333rem;
+                width: 30.13333rem;
+                height: 10.66667rem;
+                padding: 3.2rem 4.26667rem;
+                p {
+                  font-size: 5.33333rem;
+                  line-height: 6.4rem; /* 120% */
+                  letter-spacing: 0.008rem;
+                }
+              }
+            }
+          }
+        }
+        .customer_infor_container {
+          > p {
+            font-size: 3.46667rem;
+            line-height: 4.8rem;
+          }
+          .customer_infor {
+            display: block;
+            width: 100%;
+            height: fit-content;
+            .col_1_mobile_form {
+              flex-direction: column;
+              gap: 1.6rem !important;
+            }
+            .row {
+              margin: 1.6rem 0;
+              .rt-SelectIcon {
+                width: 1rem;
+                height: 1rem;
+                object-fit: cover;
+                display: block;
+              }
+            }
+            input.rt-TextFieldInput,
+            textarea.rt-TextAreaInput,
+            button.form_btn,
+            input.form_date_picker {
+              color: #b7b7b7;
+              font-family: Poppins;
+              font-size: 3.46667rem;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 4.8rem;
+              border-radius: 2.13333rem;
+              height: 10.66667rem !important;
+              padding: 3.2rem 4.26667rem;
+            }
+            .form_btn {
+              height: fit-content;
+              box-shadow: none;
+              text-overflow: ellipsis;
+            }
+            .form_date_picker {
+              border-radius: 0.5rem;
+              border: none;
+              box-sizing: border-box;
+              background-color: rgb(242, 242, 242);
+              padding: 0.75rem 1rem;
+              height: fit-content;
+              font-size: 0.875rem;
+              color: #1f2d5c;
+              background-color: rgb(242, 242, 242);
+              width: 100%;
+              height: 100%;
+            }
+            .rt-TextFieldRoot {
+              margin: 0;
+            }
+            .col_2 {
+              display: flex;
+              gap: 0.75rem;
+              > * {
+                flex: 1;
+              }
+            }
+            .col_3 {
+              .btn_container {
+                flex: none !important;
+              }
+            }
+            .row_2_col_2_mobile {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 3.2rem;
+              .btn_container {
+                min-width: 40%;
+                flex: 1 !important;
+              }
+              .btn_container:last-child {
+                flex: 1 !important;
+                max-width: none;
+              }
+            }
+            .btn_container {
+              p {
+                font-size: 3.46667rem;
+                font-weight: 400;
+                line-height: 4.8rem;
+              }
+              .date_picker_container {
+                position: relative;
+                width: 100%;
+                border-radius: 2.13333rem;
+                > * {
+                  width: 100%;
+                }
+                input {
+                  position: relative;
+                }
+                input[type="date"]::-webkit-calendar-picker-indicator {
+                  background: transparent;
+                  bottom: 0;
+                  color: transparent;
+                  cursor: pointer;
+                  height: auto;
+                  left: 0;
+                  position: absolute;
+                  right: 0;
+                  top: 0;
+                  width: auto;
+                }
+                .form_date_picker {
+                  color: #b7b7b7;
+                  width: 100%;
+                  font-family: Poppins;
+                  font-size: 3.46667rem !important;
+                  font-style: normal;
+                  font-weight: 400 !important;
+                  line-height: 4.8rem;
+                }
+                img {
+                  position: absolute;
+                  right: 2.5rem;
+                  top: 50%;
+                  width: 4.26667rem;
+                  height: 4.26667rem;
+                  padding: 0rem 0.07893rem 0rem 0.0792rem;
+                  transform: translateY(-50%);
+                }
+              }
+            }
+          }
+        }
+      }
+      .confirm_container {
+        > h3 {
+          font-size: 4.26667rem;
+          line-height: 6.4rem; /* 150% */
+          letter-spacing: 0.05333rem;
+        }
+        .table {
+          margin: 0.75rem 0;
+          border-radius: 2.13333rem;
+          border: 1px solid rgba(40, 124, 0, 0.14);
+          background-color: rgba(40, 124, 0, 0.14);
+          overflow: hidden;
+          width: 100%;
+          .row {
+            display: flex;
+            border: 0.5px solid #eee;
+            background: #f8fdff;
+            height: fit-content;
+            p {
+              font-size: 3.46667rem;
+              line-height: 4.8rem;
+              height: 100%;
+              min-height: fit-content;
+              padding: 4.27rem 2.13rem;
+              text-align: start;
+            }
+            p:first-child {
+              font-size: 3.46667rem;
+              line-height: 4.8rem;
+              min-width: 29.3rem;
+            }
+          }
+          .dropOff,
+          .pickUp {
+            p {
+              height: 23.5rem;
+            }
+          }
+        }
+        .sumerize {
+          padding: 3.2rem 4.26667rem;
+          border-radius: 2.13333rem;
+          gap: 2.13rem;
+          .provisional,
+          .extraFee,
+          .total {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+          }
+          .provisional,
+          .extraFee {
+            font-size: 3.46667rem;
+            font-weight: 400;
+            line-height: 4.8rem;
+            p:last-child {
+              font-size: 3.46667rem;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 4.8rem;
+            }
+          }
+          .extraFee {
+            padding-bottom: 0.5rem;
+            border-bottom: 0.26667rem rgba(217, 217, 217, 0.2) solid;
+          }
+          .total {
+            font-size: 3.73333rem;
+            line-height: 5.33333rem;
+            letter-spacing: 0.03733rem;
+            p:last-child {
+              font-size: 4.26667rem;
+              line-height: 6.4rem;
+              letter-spacing: 0.05333rem;
+            }
+          }
+        }
+        .btn_group {
+          gap: 3.2rem;
+          flex-wrap: wrap;
+          button {
+            height: 12.8rem;
+            padding: 4.26667rem 8.53333rem;
+            border-radius: 2.13333rem;
+            font-size: 3.46667rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 5.33333rem;
+          }
+          .pay_btn {
+            background-color: #b34b1e;
+            width: 100%;
+          }
+          .send_request_btn {
+            background-color: #5fb01c;
+          }
+          .pay_btn:hover {
+            background-image: url("../../assets/btnBackground.svg");
+            background-repeat: no-repeat;
+            background-size:  42.63813rem 10.2352rem;
+            background-position: center;
+          }
+          .send_request_btn:hover {
+            background-image: url("../../assets/btnBackground2.svg");
+            background-repeat: no-repeat;
+            background-size:  42.63813rem 10.2352rem;
+            background-position: center;
+          }
+          .whatsapp_btn {
+            flex: 1;
+            padding: 2.66667rem 4.26667rem;
+            font-size: 3.46667rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 5.33333rem;
+            width: fit-content;
+            svg {
+              width: 5.33333rem;
+              height: 5.3336rem;
+              margin-right: 2.13rem;
+            }
+          }
+          .whatsapp_btn:hover {
+            color: white;
+            background-color: #0fa82e;
+            svg {
+              .green_part {
+                fill: white;
+              }
+              .white_part {
+                fill: #0fa82e;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

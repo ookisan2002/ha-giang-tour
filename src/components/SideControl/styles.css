@@ -1,0 +1,135 @@
+.side_control {
+  position: fixed;
+  z-index: 100;
+  top: 100rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.38rem;
+  .call_btn {
+    width: fit-content;
+    height: fit-content;
+    background-color: #cecece;
+    border-radius: 9999px;
+    position: relative;
+    .spread {
+      width: 3.5rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      height: 3.5rem;
+      background-color: #cecece;
+      border-radius: 9999px;
+      opacity: 1;
+      animation: spread 1s linear infinite;
+    }
+    svg {
+      width: 3.5rem;
+      height: 3.5rem;
+      position: absolute;
+      z-index: 2;
+    }
+  }
+  .scroll_top_btn {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .book_btn {
+    width: 3.125rem;
+    height: 3.125rem;
+    background: #fc692a;
+    color: #fff;
+    border-radius: 9999px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 0.8125rem;
+    letter-spacing: 0.03125rem;
+    animation: bounce 1s infinite;
+  }
+}
+
+@media (max-width:375px) {
+  .side_control {
+    position: fixed;
+    z-index: 102;
+    top: 220rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.38rem;
+    .call_btn {
+      display: none;
+      width: fit-content;
+      height: fit-content;
+      background-color: #cecece;
+      border-radius: 9999px;
+      position: relative;
+      .spread {
+        width: 3.5rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        height: 3.5rem;
+        background-color: #cecece;
+        border-radius: 9999px;
+        opacity: 1;
+        animation: spread 1s linear infinite;
+      }
+      svg {
+        width: 3.5rem;
+        height: 3.5rem;
+        position: absolute;
+        z-index: 2;
+      }
+    }
+    .scroll_top_btn {
+      width: 10.5rem;
+      height: 10.5rem;
+    }
+    .book_btn {
+      display: none;
+      width: 3.125rem;
+      height: 3.125rem;
+      background: #fc692a;
+      color: #fff;
+      border-radius: 9999px;
+      justify-content: center;
+      align-content: center;
+      text-align: center;
+      font-family: Roboto;
+      font-size: 0.75rem;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 0.8125rem;
+      letter-spacing: 0.03125rem;
+      animation: bounce 1s infinite;
+    }
+  }
+}
+
+@keyframes spread {
+  to {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}

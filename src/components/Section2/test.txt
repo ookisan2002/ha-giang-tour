@@ -1,0 +1,583 @@
+import { useCallback, useEffect, useRef } from "react";
+import "./styles.css";
+import React from "react";
+
+const Section2 = () => {
+  const day_btn = useRef([]);
+  let handleSchedualClick;
+  let handleNextBtn;
+  let handlePrevBtn;
+  useEffect(() => {
+    handleSchedualClick = (day) => {
+      // console.log('test')
+      let showedRoute = document.querySelectorAll(".map_container .show");
+      showedRoute.forEach((el) => {
+        el.classList.remove("show");
+      });
+      if (day == "day1") {
+        let showedElement = document.querySelectorAll(".section2 .show");
+        showedElement.forEach((it) => {
+          it.classList.remove("show");
+        });
+        let visitedElement = document.querySelectorAll(".section2 .visited");
+        visitedElement.forEach((it) => {
+          it.classList.remove("visited");
+        });
+        let daySchedual = document.querySelectorAll(".schedual_day1");
+        daySchedual.forEach((el) => {
+          el.classList.add("show", "visited");
+        });
+        let motobikeElement = document.querySelectorAll(".motobike");
+        motobikeElement.forEach((el) => {
+          el.classList.forEach((className) => {
+            if (className.includes("position")) {
+              el.classList.remove(className);
+            }
+          });
+          el.classList.add("position1");
+        });
+        let routeMap1 = document.querySelector(".route_img1");
+        routeMap1.classList.add("show");
+      }
+      if (day == "day2") {
+        let showedElement = document.querySelectorAll(".section2 .show");
+        showedElement.forEach((it) => {
+          it.classList.remove("show");
+        });
+        let daySchedual = document.querySelectorAll(".schedual_day2");
+        let daySchedual3 = document.querySelectorAll(".schedual_day3");
+        if (
+          daySchedual3[0].classList.contains("visited") ||
+          daySchedual3[1].classList.contains("visited")
+        )
+          daySchedual3.forEach((el) => {
+            el.classList.remove("visited");
+          });
+        daySchedual.forEach((el) => {
+          el.classList.add("show", "visited");
+        });
+        let route1 = document.querySelectorAll(".route1");
+        route1.forEach((el) => {
+          el.classList.add("show");
+        });
+        let motobikeElement = document.querySelectorAll(".motobike");
+        motobikeElement.forEach((el) => {
+          el.classList.forEach((className) => {
+            if (className.includes("position")) {
+              el.classList.remove(className);
+            }
+          });
+          el.classList.add("position2");
+        });
+        let routeMap2 = document.querySelector(".route_img2");
+        routeMap2.classList.add("show");
+      }
+      if (day == "day3") {
+        let showedElement = document.querySelectorAll(".schedual_detail .show");
+        showedElement.forEach((it) => {
+          it.classList.remove("show");
+        });
+        let daySchedual = document.querySelectorAll(".schedual_day3");
+        daySchedual.forEach((el) => {
+          el.classList.add("show", "visited");
+        });
+        let route1 = document.querySelectorAll(".route1");
+        let route2 = document.querySelectorAll(".route2");
+        if (
+          !route1[0].classList.contains("show") ||
+          !route1[1].classList.contains("show")
+        ) {
+          let daySchedual = document.querySelectorAll(".schedual_day2");
+          daySchedual.forEach((el) => {
+            el.classList.add("visited");
+          });
+          route1.forEach((el) => {
+            el.classList.add("show");
+          });
+          setTimeout(() => {
+            route2.forEach((el) => {
+              el.classList.add("show");
+            });
+          }, 200);
+        } else {
+          route2.forEach((el) => {
+            el.classList.add("show");
+          });
+        }
+        let motobikeElement = document.querySelectorAll(".motobike");
+        console.log(motobikeElement)
+        motobikeElement.forEach((el) => {
+          el.classList.forEach((className) => {
+            if (className.includes("position")) {
+              el.classList.remove(className);
+            }
+          });
+          el.classList.add("position3");
+        });
+        let routeMap3 = document.querySelector(".route_img3");
+        routeMap3.classList.add("show");
+      }
+    };
+    let day1Btn = document.querySelectorAll(".day1");
+    let day2Btn = document.querySelectorAll(".day2");
+    let day3Btn = document.querySelectorAll(".day3");
+    handleNextBtn = () => {
+      let showedSchedual = document.querySelectorAll(".day_schedual.show");
+      if (showedSchedual[0].classList.contains("schedual_day1") || showedSchedual[1].classList.contains("schedual_day1")) {
+        day2Btn[0].click();
+        day2Btn[1].click();
+      }
+      if (showedSchedual[0].classList.contains("schedual_day2") || showedSchedual[1].classList.contains("schedual_day1")) {
+        day3Btn[0].click();
+        day3Btn[1].click();
+      }
+    };
+    handlePrevBtn = () => {
+      let showedSchedual = document.querySelectorAll(".day_schedual.show");
+      if (showedSchedual[0].classList.contains("schedual_day3") || showedSchedual[1].classList.contains("schedual_day3")) {
+        day2Btn[0].click();
+        day2Btn[1].click();
+      }
+      if (showedSchedual[0].classList.contains("schedual_day2") || showedSchedual[1].classList.contains("schedual_day2")) {
+        day1Btn[0].click();
+        day1Btn[1].click();
+      }
+    };
+    var section2 = document.querySelector(".schedual_content");
+    const observerForTourDetail = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          var titleSection2 = document.querySelector(
+            ".section2_container > h3"
+          );
+          var subTitleSection2 = document.querySelector(
+            ".section2_container > p"
+          );
+          var mapSection2 = document.querySelector(".section2 .map_container");
+          titleSection2.classList.add("appear");
+          subTitleSection2.classList.add("appear");
+          mapSection2.classList.add("appear");
+        }
+      });
+    });
+
+    observerForTourDetail.observe(section2);
+    return () => {
+      if (section2) {
+        observerForTourDetail.unobserve(section2);
+      }
+      observerForTourDetail.disconnect();
+    };
+  }, []);
+  return (
+    <div className="section2_container">
+      <p>HA GIANG CHEERS TOUR</p>
+      <h3>BEST TRIP EVER</h3>
+      <div class="section2">
+        <div class="schedual">
+          <div class="schedual_content">
+            <div class="travel_animate">
+              <img
+                class="motobike position1"
+                src="assets/motobike.svg"
+                alt=""
+              />
+              <div class="route route1">
+                <div></div>
+                <img src="assets/strokedLine.svg" alt="" />
+              </div>
+              <div class="point"></div>
+              <div class="route route2">
+                <div></div>
+                <img src="assets/strokedLine.svg" alt="" />
+              </div>
+            </div>
+            <div class="schedual_detail">
+              <div class="day_schedual schedual_day1 show visited">
+                <div class="point"></div>
+                <p
+                  ref={(el) => (day_btn.current[0] = el)}
+                  onClick={() => handleSchedualClick("day1")}
+                  class="day day1"
+                >
+                  DAY 1
+                </p>
+                <p class="distance">(128 km)</p>
+                <p class="destination">Ha Giang</p>
+                <div class="connect_line">
+                  <svg
+                    width="9"
+                    height="35"
+                    viewBox="0 0 9 35"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="Vector 510">
+                      <path
+                        id="Vector 509"
+                        d="M4.5 26.9102C2.29086 26.9102 0.500001 28.701 0.500001 30.9102C0.500001 33.1193 2.29086 34.9102 4.5 34.9102C6.70914 34.9102 8.5 33.1193 8.5 30.9102C8.5 28.701 6.70914 26.9102 4.5 26.9102ZM3.75 3.27835e-08L3.75 2.57585L5.25 2.57585L5.25 -3.27835e-08L3.75 3.27835e-08ZM3.75 7.72754L3.75 12.8792L5.25 12.8792L5.25 7.72754L3.75 7.72754ZM3.75 18.0309L3.75 23.1826L5.25 23.1826L5.25 18.0309L3.75 18.0309ZM3.75 28.3343L3.75 30.9102L5.25 30.9102L5.25 28.3343L3.75 28.3343Z"
+                        fill="#CFCFCF"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <p class="destination">Tam Son</p>
+                <div class="connect_line">
+                  <svg
+                    width="9"
+                    height="35"
+                    viewBox="0 0 9 35"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="Vector 510">
+                      <path
+                        id="Vector 509"
+                        d="M4.5 26.9102C2.29086 26.9102 0.500001 28.701 0.500001 30.9102C0.500001 33.1193 2.29086 34.9102 4.5 34.9102C6.70914 34.9102 8.5 33.1193 8.5 30.9102C8.5 28.701 6.70914 26.9102 4.5 26.9102ZM3.75 3.27835e-08L3.75 2.57585L5.25 2.57585L5.25 -3.27835e-08L3.75 3.27835e-08ZM3.75 7.72754L3.75 12.8792L5.25 12.8792L5.25 7.72754L3.75 7.72754ZM3.75 18.0309L3.75 23.1826L5.25 23.1826L5.25 18.0309L3.75 18.0309ZM3.75 28.3343L3.75 30.9102L5.25 30.9102L5.25 28.3343L3.75 28.3343Z"
+                        fill="#CFCFCF"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <p class="destination">Yen Minh</p>
+                <div class="connect_line">
+                  <svg
+                    width="9"
+                    height="35"
+                    viewBox="0 0 9 35"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="Vector 510">
+                      <path
+                        id="Vector 509"
+                        d="M4.5 26.9102C2.29086 26.9102 0.500001 28.701 0.500001 30.9102C0.500001 33.1193 2.29086 34.9102 4.5 34.9102C6.70914 34.9102 8.5 33.1193 8.5 30.9102C8.5 28.701 6.70914 26.9102 4.5 26.9102ZM3.75 3.27835e-08L3.75 2.57585L5.25 2.57585L5.25 -3.27835e-08L3.75 3.27835e-08ZM3.75 7.72754L3.75 12.8792L5.25 12.8792L5.25 7.72754L3.75 7.72754ZM3.75 18.0309L3.75 23.1826L5.25 23.1826L5.25 18.0309L3.75 18.0309ZM3.75 28.3343L3.75 30.9102L5.25 30.9102L5.25 28.3343L3.75 28.3343Z"
+                        fill="#CFCFCF"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <p class="destination">Dong Van</p>
+              </div>
+              <div class="day_schedual schedual_day2">
+                <div class="point point_day2"></div>
+                <p
+                  ref={(el) => (day_btn.current[1] = el)}
+                  onClick={() => handleSchedualClick("day2")}
+                  class="day day2"
+                >
+                  DAY 2
+                </p>
+                <p class="distance">(128 km)</p>
+                <p class="destination">Dong Van</p>
+                <div class="connect_line">
+                  <svg
+                    width="9"
+                    height="35"
+                    viewBox="0 0 9 35"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="Vector 510">
+                      <path
+                        id="Vector 509"
+                        d="M4.5 26.9102C2.29086 26.9102 0.500001 28.701 0.500001 30.9102C0.500001 33.1193 2.29086 34.9102 4.5 34.9102C6.70914 34.9102 8.5 33.1193 8.5 30.9102C8.5 28.701 6.70914 26.9102 4.5 26.9102ZM3.75 3.27835e-08L3.75 2.57585L5.25 2.57585L5.25 -3.27835e-08L3.75 3.27835e-08ZM3.75 7.72754L3.75 12.8792L5.25 12.8792L5.25 7.72754L3.75 7.72754ZM3.75 18.0309L3.75 23.1826L5.25 23.1826L5.25 18.0309L3.75 18.0309ZM3.75 28.3343L3.75 30.9102L5.25 30.9102L5.25 28.3343L3.75 28.3343Z"
+                        fill="#CFCFCF"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <p class="destination">Lung Cu</p>
+                <div class="connect_line">
+                  <svg
+                    width="9"
+                    height="35"
+                    viewBox="0 0 9 35"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="Vector 510">
+                      <path
+                        id="Vector 509"
+                        d="M4.5 26.9102C2.29086 26.9102 0.500001 28.701 0.500001 30.9102C0.500001 33.1193 2.29086 34.9102 4.5 34.9102C6.70914 34.9102 8.5 33.1193 8.5 30.9102C8.5 28.701 6.70914 26.9102 4.5 26.9102ZM3.75 3.27835e-08L3.75 2.57585L5.25 2.57585L5.25 -3.27835e-08L3.75 3.27835e-08ZM3.75 7.72754L3.75 12.8792L5.25 12.8792L5.25 7.72754L3.75 7.72754ZM3.75 18.0309L3.75 23.1826L5.25 23.1826L5.25 18.0309L3.75 18.0309ZM3.75 28.3343L3.75 30.9102L5.25 30.9102L5.25 28.3343L3.75 28.3343Z"
+                        fill="#CFCFCF"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <p class="destination">Ma Pi Leng</p>
+                <div class="connect_line">
+                  <svg
+                    width="9"
+                    height="35"
+                    viewBox="0 0 9 35"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="Vector 510">
+                      <path
+                        id="Vector 509"
+                        d="M4.5 26.9102C2.29086 26.9102 0.500001 28.701 0.500001 30.9102C0.500001 33.1193 2.29086 34.9102 4.5 34.9102C6.70914 34.9102 8.5 33.1193 8.5 30.9102C8.5 28.701 6.70914 26.9102 4.5 26.9102ZM3.75 3.27835e-08L3.75 2.57585L5.25 2.57585L5.25 -3.27835e-08L3.75 3.27835e-08ZM3.75 7.72754L3.75 12.8792L5.25 12.8792L5.25 7.72754L3.75 7.72754ZM3.75 18.0309L3.75 23.1826L5.25 23.1826L5.25 18.0309L3.75 18.0309ZM3.75 28.3343L3.75 30.9102L5.25 30.9102L5.25 28.3343L3.75 28.3343Z"
+                        fill="#CFCFCF"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <p class="destination">Nho Que</p>
+                <div class="connect_line">
+                  <svg
+                    width="9"
+                    height="35"
+                    viewBox="0 0 9 35"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="Vector 510">
+                      <path
+                        id="Vector 509"
+                        d="M4.5 26.9102C2.29086 26.9102 0.500001 28.701 0.500001 30.9102C0.500001 33.1193 2.29086 34.9102 4.5 34.9102C6.70914 34.9102 8.5 33.1193 8.5 30.9102C8.5 28.701 6.70914 26.9102 4.5 26.9102ZM3.75 3.27835e-08L3.75 2.57585L5.25 2.57585L5.25 -3.27835e-08L3.75 3.27835e-08ZM3.75 7.72754L3.75 12.8792L5.25 12.8792L5.25 7.72754L3.75 7.72754ZM3.75 18.0309L3.75 23.1826L5.25 23.1826L5.25 18.0309L3.75 18.0309ZM3.75 28.3343L3.75 30.9102L5.25 30.9102L5.25 28.3343L3.75 28.3343Z"
+                        fill="#CFCFCF"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <p class="destination">Du Gia</p>
+              </div>
+              <div class="day_schedual schedual_day3">
+                <div class="point point_day3"></div>
+                <p
+                  ref={(el) => (day_btn.current[2] = el)}
+                  onClick={() => handleSchedualClick("day3")}
+                  class="day day3"
+                >
+                  DAY 3
+                </p>
+                <p class="distance">(128 km)</p>
+                <p class="destination">Meo Vac</p>
+                <div class="connect_line">
+                  <svg
+                    width="9"
+                    height="35"
+                    viewBox="0 0 9 35"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="Vector 510">
+                      <path
+                        id="Vector 509"
+                        d="M4.5 26.9102C2.29086 26.9102 0.500001 28.701 0.500001 30.9102C0.500001 33.1193 2.29086 34.9102 4.5 34.9102C6.70914 34.9102 8.5 33.1193 8.5 30.9102C8.5 28.701 6.70914 26.9102 4.5 26.9102ZM3.75 3.27835e-08L3.75 2.57585L5.25 2.57585L5.25 -3.27835e-08L3.75 3.27835e-08ZM3.75 7.72754L3.75 12.8792L5.25 12.8792L5.25 7.72754L3.75 7.72754ZM3.75 18.0309L3.75 23.1826L5.25 23.1826L5.25 18.0309L3.75 18.0309ZM3.75 28.3343L3.75 30.9102L5.25 30.9102L5.25 28.3343L3.75 28.3343Z"
+                        fill="#CFCFCF"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <p class="destination">Mau Due</p>
+                <div class="connect_line">
+                  <svg
+                    width="9"
+                    height="35"
+                    viewBox="0 0 9 35"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="Vector 510">
+                      <path
+                        id="Vector 509"
+                        d="M4.5 26.9102C2.29086 26.9102 0.500001 28.701 0.500001 30.9102C0.500001 33.1193 2.29086 34.9102 4.5 34.9102C6.70914 34.9102 8.5 33.1193 8.5 30.9102C8.5 28.701 6.70914 26.9102 4.5 26.9102ZM3.75 3.27835e-08L3.75 2.57585L5.25 2.57585L5.25 -3.27835e-08L3.75 3.27835e-08ZM3.75 7.72754L3.75 12.8792L5.25 12.8792L5.25 7.72754L3.75 7.72754ZM3.75 18.0309L3.75 23.1826L5.25 23.1826L5.25 18.0309L3.75 18.0309ZM3.75 28.3343L3.75 30.9102L5.25 30.9102L5.25 28.3343L3.75 28.3343Z"
+                        fill="#CFCFCF"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <p class="destination">Lung Tam</p>
+                <div class="connect_line">
+                  <svg
+                    width="9"
+                    height="35"
+                    viewBox="0 0 9 35"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="Vector 510">
+                      <path
+                        id="Vector 509"
+                        d="M4.5 26.9102C2.29086 26.9102 0.500001 28.701 0.500001 30.9102C0.500001 33.1193 2.29086 34.9102 4.5 34.9102C6.70914 34.9102 8.5 33.1193 8.5 30.9102C8.5 28.701 6.70914 26.9102 4.5 26.9102ZM3.75 3.27835e-08L3.75 2.57585L5.25 2.57585L5.25 -3.27835e-08L3.75 3.27835e-08ZM3.75 7.72754L3.75 12.8792L5.25 12.8792L5.25 7.72754L3.75 7.72754ZM3.75 18.0309L3.75 23.1826L5.25 23.1826L5.25 18.0309L3.75 18.0309ZM3.75 28.3343L3.75 30.9102L5.25 30.9102L5.25 28.3343L3.75 28.3343Z"
+                        fill="#CFCFCF"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <p class="destination">Quan Ba</p>
+                <div class="connect_line">
+                  <svg
+                    width="9"
+                    height="35"
+                    viewBox="0 0 9 35"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="Vector 510">
+                      <path
+                        id="Vector 509"
+                        d="M4.5 26.9102C2.29086 26.9102 0.500001 28.701 0.500001 30.9102C0.500001 33.1193 2.29086 34.9102 4.5 34.9102C6.70914 34.9102 8.5 33.1193 8.5 30.9102C8.5 28.701 6.70914 26.9102 4.5 26.9102ZM3.75 3.27835e-08L3.75 2.57585L5.25 2.57585L5.25 -3.27835e-08L3.75 3.27835e-08ZM3.75 7.72754L3.75 12.8792L5.25 12.8792L5.25 7.72754L3.75 7.72754ZM3.75 18.0309L3.75 23.1826L5.25 23.1826L5.25 18.0309L3.75 18.0309ZM3.75 28.3343L3.75 30.9102L5.25 30.9102L5.25 28.3343L3.75 28.3343Z"
+                        fill="#CFCFCF"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <p class="destination">Ha Giang</p>
+              </div>
+            </div>
+            <button>BOOK NOW</button>
+          </div>
+          <div class="arrow_left" onClick={() => handlePrevBtn()}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="29"
+              height="14"
+              viewBox="0 0 29 14"
+              fill="none"
+            >
+              <path
+                d="M0.940433 7.62075C0.353189 7.41349 0.353188 6.583 0.940435 6.37574L16.0169 1.05462C16.4464 0.903033 16.8968 1.22166 16.8968 1.67713L16.8968 12.3194C16.8968 12.7748 16.4464 13.0935 16.0169 12.9419L0.940433 7.62075Z"
+                fill="#B34B1E"
+                stroke="#B34B1E"
+              ></path>
+            </svg>
+          </div>
+          <div class="arrow_right" onClick={() => handleNextBtn()}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="29"
+              height="14"
+              viewBox="0 0 29 14"
+              fill="none"
+            >
+              <path
+                d="M0.940433 7.62075C0.353189 7.41349 0.353188 6.583 0.940435 6.37574L16.0169 1.05462C16.4464 0.903033 16.8968 1.22166 16.8968 1.67713L16.8968 12.3194C16.8968 12.7748 16.4464 13.0935 16.0169 12.9419L0.940433 7.62075Z"
+                fill="#B34B1E"
+                stroke="#B34B1E"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <div class="schedual_mobile">
+          <div class="schedual_content">
+            <div class="travel_animate">
+              <img
+                class="motobike position1"
+                src="assets/motobike.svg"
+                alt=""
+              />
+              <div class="route route1">
+                <div></div>
+                <img src="assets/strokedLine.svg" alt="" />
+              </div>
+              <div class="point"></div>
+              <div class="route route2">
+                <div></div>
+                <img src="assets/strokedLine.svg" alt="" />
+              </div>
+            </div>
+            <div class="schedual_detail">
+              <div class="day_schedual schedual_day1 show visited">
+                <div class="point"></div>
+                <p
+                  ref={(el) => (day_btn.current[0] = el)}
+                  onClick={() => handleSchedualClick("day1")}
+                  class="day day1"
+                >
+                  DAY 1<p class="distance">(128 km)</p>
+                </p>
+                {/* <p class="destination">Ha Giang</p>
+                <p class="destination">Tam Son</p>
+                <p class="destination">Yen Minh</p>
+                <p class="destination">Dong Van</p> */}
+              </div>
+              <div class="day_schedual schedual_day2">
+                <div class="point point_day2"></div>
+                <p
+                  ref={(el) => (day_btn.current[1] = el)}
+                  onClick={() => handleSchedualClick("day2")}
+                  class="day day2"
+                >
+                  DAY 2<p class="distance">(128 km)</p>
+                </p>
+                {/* <p class="destination">Dong Van</p>
+                <p class="destination">Lung Cu</p>
+                <p class="destination">Ma Pi Leng</p>
+                <p class="destination">Nho Que</p>
+                <p class="destination">Du Gia</p> */}
+              </div>
+              <div class="day_schedual schedual_day3">
+                <div class="point point_day3"></div>
+                <p
+                  ref={(el) => (day_btn.current[2] = el)}
+                  onClick={() => handleSchedualClick("day3")}
+                  class="day day3"
+                >
+                  DAY 3<p class="distance">(128 km)</p>
+                </p>
+                {/* <p class="destination">Meo Vac</p>
+                <p class="destination">Mau Due</p>
+                <p class="destination">Lung Tam</p>
+                <p class="destination">Quan Ba</p>
+                <p class="destination">Ha Giang</p> */}
+              </div>
+            </div>
+            <button>BOOK NOW</button>
+          </div>
+          <div class="arrow_left" onClick={() => handlePrevBtn()}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="29"
+              height="14"
+              viewBox="0 0 29 14"
+              fill="none"
+            >
+              <path
+                d="M0.940433 7.62075C0.353189 7.41349 0.353188 6.583 0.940435 6.37574L16.0169 1.05462C16.4464 0.903033 16.8968 1.22166 16.8968 1.67713L16.8968 12.3194C16.8968 12.7748 16.4464 13.0935 16.0169 12.9419L0.940433 7.62075Z"
+                fill="#B34B1E"
+                stroke="#B34B1E"
+              ></path>
+            </svg>
+          </div>
+          <div class="arrow_right" onClick={() => handleNextBtn()}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="29"
+              height="14"
+              viewBox="0 0 29 14"
+              fill="none"
+            >
+              <path
+                d="M0.940433 7.62075C0.353189 7.41349 0.353188 6.583 0.940435 6.37574L16.0169 1.05462C16.4464 0.903033 16.8968 1.22166 16.8968 1.67713L16.8968 12.3194C16.8968 12.7748 16.4464 13.0935 16.0169 12.9419L0.940433 7.62075Z"
+                fill="#B34B1E"
+                stroke="#B34B1E"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <div class="map_container">
+          <img class="map_base" src="assets/mapBase.png" alt="" />
+          <img class="route_img1 show" src="assets/route3.png" alt="" />
+          <img class="route_img2" src="assets/route2.png" alt="" />
+          <img class="route_img3" src="assets/route1.png" alt="" />
+        </div>
+      </div>
+      <div class="intro_video">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/Nj6IqVLoaUg?si=c1OSSPiaPdQvYnq5"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  );
+};
+export default Section2;

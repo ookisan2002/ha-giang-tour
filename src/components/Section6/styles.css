@@ -1,0 +1,324 @@
+.section6 {
+  margin: 6.25rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem;
+  position: relative;
+  > * {
+    z-index: 2;
+  }
+  > p {
+    color: #b34b1e;
+    font-family: Heavitas;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  > p.appear {
+    animation: goIn 1s ease;
+    animation-fill-mode: forwards;
+  }
+  > h3 {
+    color: var(--Primary-70, #b34b1e);
+    font-family: Heavitas;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3rem;
+    margin-bottom: 1.88rem;
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  > h3.appear {
+    animation: goIn 1s ease;
+    animation-fill-mode: forwards;
+  }
+  .section6_background {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+  }
+  .tour_card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    border-radius: 1.5rem;
+    background: #fff;
+    box-shadow: -16px -16px 32px 0px rgba(0, 0, 0, 0.04),
+      6px 6px 32px 0px rgba(0, 0, 0, 0.04);
+    padding: 1rem;
+    align-items: start;
+    > * {
+      cursor: pointer;
+    }
+    .tour_img {
+      width: 100%;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 54.17%, #000 100%),
+        url(../../assets/tour_card_img.webp);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      width: 37.8125rem;
+      border-radius: 1rem;
+      height: 21.125rem;
+      background-position: center;
+      transition: all 0.2s linear;
+      display: flex;
+      .option {
+        display: flex;
+        flex: 1;
+        margin-top: auto;
+        justify-content: center;
+        p {
+          color: #fff;
+          font-family: Poppins;
+          font-size: 2.125rem;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 2.5rem;
+          letter-spacing: 0.00531rem;
+          margin-right: 0.5rem;
+        }
+        span {
+          color: var(--Gray-Scale-5, #d9d9d9);
+          font-family: Poppins;
+          font-size: 0.875rem;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 1.25rem;
+          letter-spacing: 0.00875rem;
+          text-decoration-line: underline;
+          align-content: center;
+        }
+      }
+    }
+    .tour_img:hover {
+      background-size: 120% 120%;
+      background-position: center;
+    }
+    > h3 {
+      color: #2e2e2e;
+      font-family: Poppins;
+      font-size: 1.25rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 1.5rem;
+      letter-spacing: 0.00188rem;
+    }
+    .tour_infor_row {
+      display: flex;
+      align-items: center;
+      img {
+        width: 1rem;
+        height: 1rem;
+      }
+      p {
+        color: #b34b1e;
+        font-family: Poppins;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 1.375rem;
+        letter-spacing: 0.00219rem;
+        margin-left: 0.2rem;
+      }
+      span {
+        color: #727272;
+        font-family: Poppins;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.375rem;
+        letter-spacing: 0.00219rem;
+        margin-left: 0.2rem;
+      }
+    }
+    .btn_group {
+      display: flex;
+      width: 100%;
+      gap: 0.75rem;
+      margin-top: 1rem;
+      justify-content: start;
+      button {
+        border-radius: 0.5rem;
+        display: flex;
+        min-width: 12.1875rem;
+        height: 3.5rem;
+        padding: 1rem 2rem;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 0.8125rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.25rem;
+      }
+      .book_btn {
+        background-color: #b34b1e;
+        color: white;
+        transition: all 0.3s linear;
+      }
+      .view_tour_btn {
+        background-color: white;
+        color: #b34b1e;
+        border-radius: 0.5rem;
+        border: 1px solid #b34b1e;
+        transition: all 0.3s linear;
+      }
+      .book_btn:hover {
+        background-image: url("../../assets/btnBackground.svg");
+        background-repeat: no-repeat;
+        background-size: 92%;
+        background-position: center;
+      }
+      .view_tour_btn:hover {
+        background-image: url("../../assets/btnBackground.svg");
+        background-repeat: no-repeat;
+        background-size: 92%;
+        background-position: center;
+        background-color: #b34b1e;
+        color: white;
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .section6 {
+    margin: 6.25rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem;
+    position: relative;
+    > * {
+      z-index: 2;
+    }
+    > p {
+      font-size: 3.2rem;
+    }
+    > p.appear {
+      animation: goIn 1s ease;
+      animation-fill-mode: forwards;
+    }
+    > h3 {
+      font-size: 6.4rem;
+      line-height: 6.4rem;
+    }
+    > h3.appear {
+      animation: goIn 1s ease;
+      animation-fill-mode: forwards;
+    }
+    .section6_background {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 0;
+    }
+    .tour_card {
+      padding: 3.2rem;
+      gap: 3.2rem;
+      border-radius: 4.26667rem;
+      .tour_img {
+        width: 85.06667rem;
+        height: 59.2rem;
+        border-radius: 4.26667rem;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: end;
+        padding: 4.27rem;
+        .option {
+          height: fit-content;
+          flex: none;
+          margin: 0;
+          gap: 2.13rem;
+          margin-top: 2.67rem;
+          p {
+            font-size: 5.33333rem;
+            line-height: 6.4rem; /* 120% */
+            letter-spacing: 0.008rem;
+            height: fit-content;
+          }
+          span {
+            font-size: 3.46667rem;
+            font-weight: 600;
+            line-height: 4.8rem;
+            height: fit-content;
+          }
+        }
+      }
+      .tour_img:hover {
+        background-size: 120% 120%;
+        background-position: center;
+      }
+      > h3 {
+        font-size: 4.26667rem;
+        line-height: 6.4rem; /* 150% */
+        letter-spacing: 0.05333rem;
+      }
+      .tour_infor_row {
+        display: flex;
+        align-items: start;
+        img {
+          width: 4.26667rem;
+          height: 4.26667rem;
+        }
+        p {
+          font-size: 3.46667rem;
+          line-height: 4.8rem;
+          min-width: fit-content;
+          margin-right: 3rem;
+        }
+        span {
+          font-size: 3.46667rem;
+          line-height: 4.8rem;
+        }
+      }
+      .btn_group {
+        gap: 3.2rem;
+        margin-top: 3.2rem;
+        button {
+          border-radius: 2.13333rem;
+          font-size: 3.46667rem;
+          line-height: 5.33333rem;
+          height: 11.73333rem;
+          padding: 2.66667rem 5.33333rem;
+          flex: 1;
+        }
+        .book_btn {
+          background-color: #b34b1e;
+          color: white;
+          transition: all 0.3s linear;
+        }
+        .view_tour_btn {
+          background-color: white;
+          color: #b34b1e;
+          border-radius: 2.13333rem;
+          border: 1px solid #b34b1e;
+          transition: all 0.3s linear;
+        }
+        .book_btn:hover {
+          background-image: url("../../assets/btnBackground.svg");
+          background-repeat: no-repeat;
+          background-size: 92%;
+          background-position: center;
+        }
+        .view_tour_btn:hover {
+          background-image: url("../../assets/btnBackground.svg");
+          background-repeat: no-repeat;
+          background-size: 92%;
+          background-position: center;
+          background-color: #b34b1e;
+          color: white;
+        }
+      }
+    }
+  }
+}

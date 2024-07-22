@@ -1,0 +1,96 @@
+.infor_part{
+    display: none;
+}
+.seeMore{
+    display: none;
+}
+
+@media (max-width: 375px) {
+    .infor_part {
+      display: flex;
+      flex-direction: column;
+      padding: 4.27rem;
+      div {
+        padding: 3.2rem 0;
+        border-bottom: 0.13333rem rgba(217, 217, 217, 0.5) solid;
+      }
+      div:nth-child(5) {
+        border: none;
+      }
+      h3 {
+        display: flex;
+        img {
+          width: 4.26667rem;
+          height: 4.26667rem;
+          margin-right: 1.6rem;
+        }
+        color: #a1a1a1;
+        font-family: Poppins;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 18px;
+      }
+      ul {
+        list-style: inside !important;
+      }
+      li,
+      p {
+        overflow: hidden;
+        color: #2e2e2e;
+        text-overflow: ellipsis;
+        font-family: Poppins;
+        font-size: 3.73333rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 5.86667rem;
+        letter-spacing: 0.00933rem;
+        margin-left: 5rem;
+      }
+    
+    }
+    .seeMore {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      position: relative;
+      height: fit-content;
+      p {
+        margin-left: 0;
+        margin-right: 2rem;
+        color: #b34b1e;
+        font-family: Poppins;
+        font-size: 3.73333rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 5.86667rem;
+        letter-spacing: 0.00933rem;
+        transition: all 0.3s linear;
+      }
+      svg {
+        transition: all 0.3s linear;
+      }
+    }
+    
+    .infor_part.active{
+        height: 40rem;
+        overflow: hidden;
+    }
+    
+    .seeMore.active {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+    .seeMore.active::before{
+      content: "";
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 101%;
+      z-index: 10;
+      height: 6.27rem;
+      background: linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 100%);
+    }
+}
