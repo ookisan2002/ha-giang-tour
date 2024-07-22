@@ -1,7 +1,7 @@
 .side_control {
   position: fixed;
   z-index: 100;
-  top: 44rem;
+  top: 31rem;
   right: 2rem;
   display: flex;
   flex-direction: column;
@@ -58,7 +58,7 @@
   .side_control {
     position: fixed;
     z-index: 102;
-    top: 220rem;
+    top: 127rem;
     right: 2rem;
     display: flex;
     flex-direction: column;
