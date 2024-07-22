@@ -1,7 +1,7 @@
 .side_control {
   position: fixed;
   z-index: 100;
-  top: 100rem;
+  top: 44rem;
   right: 2rem;
   display: flex;
   flex-direction: column;
@@ -54,7 +54,7 @@
   }
 }
 
-@media (max-width:375px) {
+@media (max-width:767px) {
   .side_control {
     position: fixed;
     z-index: 102;

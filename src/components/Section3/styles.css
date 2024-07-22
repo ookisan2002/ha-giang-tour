@@ -255,7 +255,7 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 767px) {
   .section3 {
     margin: 6.25rem auto;
     display: flex;
@@ -412,6 +412,15 @@
           .slider_header_item:first-child {
             background-color: rgb(255 240 234);
           }
+        }
+        .slider_header::-webkit-scrollbar {
+          -webkit-appearance: none;
+          display: none;
+        }
+      
+        .slider_header::-webkit-scrollbar-thumb {
+          -webkit-appearance: none;
+          display: none;
         }
         .slider {
           width: 100%;

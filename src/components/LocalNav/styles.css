@@ -2,7 +2,7 @@
   display: none;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 767px) {
   .local_nav {
     display: flex;
     position: sticky;

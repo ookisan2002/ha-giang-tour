@@ -422,7 +422,7 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 767px) {
   .section4 {
     width: 87.5rem;
     margin: 6.25rem auto;

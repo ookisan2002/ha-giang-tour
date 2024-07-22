@@ -189,7 +189,7 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 767px) {
   .section6 {
     margin: 6.25rem auto;
     display: flex;

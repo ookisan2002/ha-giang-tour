@@ -20,6 +20,10 @@
 
 html {
   font-size: 1vw;
+  scroll-behavior: smooth;
+  img{
+    user-select: none;
+  }
 }
 
 @keyframes App-logo-spin {
