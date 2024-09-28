@@ -44,12 +44,11 @@ const SideControl = () => {
         className="cursor-pointer scroll_top_btn"
         onClick={scrollToTop}
       >
-          <path d="M18 28.5V7.5M18 7.5L9 16.5M18 7.5L27 16.5" stroke="#12552A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="translate-y-[10%]"/>
-{/*         <path
+        <path
           d="M19.8438 7.64502C19.5629 6.78499 18.4371 6.78499 18.1562 7.64502L14.0518 20.2088C13.8463 20.8378 14.2782 21.4973 14.8956 21.4973L23.1044 21.4973C23.7218 21.4973 24.1537 20.8378 23.9482 20.2088L19.8438 7.64502Z"
           fill="#FC692A"
           className="translate-y-[10%]"
-        ></path> */}
+        ></path>
         <rect
           x="0.5"
           y="0.5"
